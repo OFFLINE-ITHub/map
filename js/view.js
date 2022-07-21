@@ -10,12 +10,12 @@ teachers.forEach(t => ribbons.set(t, new Animation(i => `images/${t}/ribbon(${i}
 ribbons.forEach(r => r.count = Math.floor(Math.random()*r.frames.length))
 ribbons.get('Brovko').changePosition(2225, 375);
 ribbons.get('Ermakov').changePosition(1500, 375);
-// ribbons.get('Kalikinskaya').changePosition(1500, 375);
+ribbons.get('Kalikinskaya').changePosition(1775, 125);
+ribbons.get('Kumova').changePosition(1975, 125);
 ribbons.get('Kuzmin').changePosition(1670, 375);
 ribbons.get('Pechenkin').changePosition(2050, 375);
-// ribbons.get('Ermakov').changePosition(1525, 375);
-// ribbons.get('Ermakov').changePosition(1525, 375);
-// ribbons.get('Ermakov').changePosition(1525, 375);
+ribbons.get('Petrova').changePosition(2350, 125);
+ribbons.get('Toropova').changePosition(2175, 125);
 
 
 // const scroll = new Map();
