@@ -7,6 +7,7 @@ const teachers = ['Brovko', 'Ermakov', 'Kalikinskaya', 'Kumova', 'Kuzmin', 'Pech
 
 const ribbons = new Map();
 teachers.forEach(t => ribbons.set(t, new Animation(i => `images/${t}/ribbon(${i}).png`, 100)));
+ribbons.get('Ermakov').changePosition(1525, 375);
 
 // const scroll = new Map();
 // teachers.forEach(t => scroll.set(t, new Animation(i => `images/${t}/scroll(${i}).png`, 100)));
@@ -36,14 +37,21 @@ function render() {
     context.save();
     context.clearRect(0, 0, canvas.width, canvas.height);
 
-    context.drawImage(map.img, (map.x + camera.x)* camera.scale, (map.y + camera.y)* camera.scale,
-    map.img.width * camera.scale, map.img.height * camera.scale);
+    context.drawImage(map.img, (map.x + camera.x) * camera.scale, (map.y + camera.y) * camera.scale,
+        map.img.width * camera.scale, map.img.height * camera.scale);
 
-    context.drawImage(ribbons.get("Ermakov").frames[ribbons.get("Ermakov").count],
-        (ribbons.get("Ermakov").x + camera.x)* camera.scale,
-        (ribbons.get("Ermakov").y + camera.y)* camera.scale,
-        ribbons.get("Ermakov").frames[ribbons.get("Ermakov").count].width * camera.scale,
-        ribbons.get("Ermakov").frames[ribbons.get("Ermakov").count].height * camera.scale)
+
+    ribbons.forEach(r => context.drawImage(r.frames[r.count],
+        (r.x + camera.x) * camera.scale,
+        (r.y + camera.y) * camera.scale,
+        r.frames[r.count].width * camera.scale,
+        r.frames[r.count].height * camera.scale));
+        
+    // context.drawImage(ribbons.get("Ermakov").frames[ribbons.get("Ermakov").count],
+    //     (ribbons.get("Ermakov").x + camera.x)* camera.scale,
+    //     (ribbons.get("Ermakov").y + camera.y)* camera.scale,
+    //     ribbons.get("Ermakov").frames[ribbons.get("Ermakov").count].width * camera.scale,
+    //     ribbons.get("Ermakov").frames[ribbons.get("Ermakov").count].height * camera.scale)
 
     context.restore();
 }
