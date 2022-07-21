@@ -33,8 +33,8 @@ class Animation {
             this.frames[i] = new Image();
             this.frames[i].src = srcFunc(i);
         }
-        this.x = 0;
-        this.y = 0;
+        this.x = 10;
+        this.y = 10;
         this.count = 0;
         this.angle = 0;
     }

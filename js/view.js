@@ -37,14 +37,13 @@ function render() {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     context.drawImage(map.img,
-        (map.x + camera.x) / camera.scale,
-        (map.y + camera.y) / camera.scale,
-        canvas.width / camera.scale, canvas.height / camera.scale,
-        0, 0, canvas.width, canvas.height);
+        (map.x + camera.x) * camera.scale,
+        (map.y + camera.y) * camera.scale,
+        canvas.width * camera.scale, canvas.height * camera.scale);
 
     context.drawImage(ribbons.get("Ermakov").frames[ribbons.get("Ermakov").count],
-        (ribbons.get("Ermakov").x - camera.x),
-        (ribbons.get("Ermakov").y - camera.y),
+        (ribbons.get("Ermakov").x - camera.x) * camera.scale,
+        (ribbons.get("Ermakov").y - camera.y) * camera.scale,
         ribbons.get("Ermakov").frames[ribbons.get("Ermakov").count].width * camera.scale,
         ribbons.get("Ermakov").frames[ribbons.get("Ermakov").count].height * camera.scale)
 
