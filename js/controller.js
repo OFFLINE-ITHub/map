@@ -17,8 +17,8 @@ canvas.addEventListener("touchmove", function (event) {
         scroolInertia.speedY = 20 * (touches.newEvent.touches[0].clientY - touches.oldEvent.touches[0].clientY)
             / (touches.newEvent.timeStamp - touches.oldEvent.timeStamp);
 
-            camera.x -= (touches.newEvent.touches[0].clientX - touches.oldEvent.touches[0].clientX);
-            camera.y -= (touches.newEvent.touches[0].clientY - touches.oldEvent.touches[0].clientY);
+            camera.x += (touches.newEvent.touches[0].clientX - touches.oldEvent.touches[0].clientX);
+            camera.y += (touches.newEvent.touches[0].clientY - touches.oldEvent.touches[0].clientY);
 
         touches.oldEvent = event;
     };

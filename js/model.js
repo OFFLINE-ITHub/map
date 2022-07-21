@@ -52,7 +52,7 @@ class Animation {
 
 function phisphysicsUpdate() {
     if (Math.abs(scroolInertia.speedX) > scroolInertia.deceleration && scroolInertia.isTouchEnd) {
-        camera.x -= scroolInertia.speedX;
+        camera.x += scroolInertia.speedX;
         scroolInertia.speedX > 0 ?
             scroolInertia.speedX -= scroolInertia.deceleration :
             scroolInertia.speedX += scroolInertia.deceleration;
@@ -60,7 +60,7 @@ function phisphysicsUpdate() {
     else scroolInertia.speedX = 0;
 
     if (Math.abs(scroolInertia.speedY) > scroolInertia.deceleration && scroolInertia.isTouchEnd) {
-        camera.y -= scroolInertia.speedY;
+        camera.y += scroolInertia.speedY;
         scroolInertia.speedY > 0 ?
             scroolInertia.speedY -= scroolInertia.deceleration :
             scroolInertia.speedY += scroolInertia.deceleration;
