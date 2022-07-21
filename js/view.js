@@ -7,6 +7,7 @@ const teachers = ['Brovko', 'Ermakov', 'Kalikinskaya', 'Kumova', 'Kuzmin', 'Pech
 
 const ribbons = new Map();
 teachers.forEach(t => ribbons.set(t, new Animation(i => `images/${t}/ribbon(${i}).png`, 100)));
+ribbons.forEach(r => r.count = Math.floor(Math.random()*r.frames.length))
 ribbons.get('Brovko').changePosition(2225, 375);
 ribbons.get('Ermakov').changePosition(1500, 375);
 // ribbons.get('Kalikinskaya').changePosition(1500, 375);
