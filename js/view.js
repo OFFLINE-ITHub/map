@@ -1,12 +1,12 @@
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 
-const trails = new Animation(i => `images/trails/trail(${i}).png`, 195);
+const trails = new AnimatedSprite(i => `images/trails/trail(${i}).png`, 195);
 
 const teachers = ['Brovko', 'Ermakov', 'Kalikinskaya', 'Kumova', 'Kuzmin', 'Pechenkin', 'Petrova', 'Toropova'];
 
 const ribbons = new Map();
-teachers.forEach(t => ribbons.set(t, new Animation(i => `images/${t}/ribbon(${i}).png`, 100)));
+teachers.forEach(t => ribbons.set(t, new AnimatedSprite(i => `images/${t}/ribbon(${i}).png`, 100)));
 ribbons.forEach(r => r.count = Math.floor(Math.random()*r.frames.length))
 ribbons.get('Brovko').changePosition(2225, 375);
 ribbons.get('Ermakov').changePosition(1500, 375);
@@ -19,9 +19,9 @@ ribbons.get('Toropova').changePosition(2175, 125);
 
 
 // const scroll = new Map();
-// teachers.forEach(t => scroll.set(t, new Animation(i => `images/${t}/scroll(${i}).png`, 100)));
+// teachers.forEach(t => scroll.set(t, new AnimatedSprite(i => `images/${t}/scroll(${i}).png`, 100)));
 
-const map = new Sprite("images/map.svg");
+const map = new StaticSprite("images/map.svg");
 
 map.img.onload = function () {
     animation();

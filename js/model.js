@@ -9,7 +9,7 @@ const scroolInertia = {
 
 const camera = { scale: 1, x: 0, y: 0 };
 
-class Sprite {
+class StaticSprite {
     constructor(src) {
         this.img = new Image();
         this.img.src = src;
@@ -26,7 +26,7 @@ class Sprite {
     }
 }
 
-class Animation {
+class AnimatedSprite {
     constructor(srcFunc, length) {
         this.frames = new Array(length);
         for (let i = 0; i < length; i++) {
